@@ -1,0 +1,6 @@
+namespace UdpMessages.ClientServerMessages;
+
+table CreateRoomMessage {
+  teamSize: uint8;
+  username: string (required);
+}

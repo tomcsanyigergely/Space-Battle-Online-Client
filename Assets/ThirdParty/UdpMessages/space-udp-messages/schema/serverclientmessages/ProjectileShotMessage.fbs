@@ -1,0 +1,19 @@
+include "Position.fbs";
+include "ProjectileType.fbs";
+include "../utilities/PrimitiveStructs.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+struct ProjectileShotMessageFix {
+  projectileId:  uint8;
+  owner:         uint8;
+  position:      Position;
+  direction:     float;
+  type:          ProjectileType;
+}
+
+table ProjectileShotMessage {
+  fix: ProjectileShotMessageFix (required);
+  ammo:                UdpMessages.Utilities.UInt8Struct; /* optional */
+  reloadTimeRemaining: UdpMessages.Utilities.FloatStruct; /* optional */
+}

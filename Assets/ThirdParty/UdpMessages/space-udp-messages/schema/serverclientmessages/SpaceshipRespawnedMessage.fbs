@@ -1,0 +1,9 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct SpaceshipRespawnedMessageFix {
+  owner: uint8;
+}
+
+table SpaceshipRespawnedMessage {
+  fix: SpaceshipRespawnedMessageFix (required);
+}

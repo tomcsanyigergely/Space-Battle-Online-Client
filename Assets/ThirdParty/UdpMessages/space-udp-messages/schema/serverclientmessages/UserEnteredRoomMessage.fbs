@@ -1,0 +1,6 @@
+namespace UdpMessages.ServerClientMessages;
+
+table UserEnteredRoomMessage {
+  userIndex: uint8;
+  username: string (required);
+}

@@ -1,0 +1,13 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct ControlPointTakenMessageFix {
+  controlPointId: uint8;
+  team: uint8;
+  teamOneControlProgression: float;
+  teamTwoControlProgression: float;
+  timeToDraw: float;
+}
+
+table ControlPointTakenMessage {
+  fix: ControlPointTakenMessageFix (required);
+}

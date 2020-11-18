@@ -1,0 +1,21 @@
+include "Position.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+struct ProjectileDisappearedMessageFix {
+  projectileId: uint8;
+}
+
+struct CollisionFix {
+  collisionPoint:   Position;
+  surfaceDirection: float;
+}
+
+table Collision {
+  fix: CollisionFix;
+}
+
+table ProjectileDisappearedMessage {
+  fix: ProjectileDisappearedMessageFix (required);
+  collision: Collision; // optional
+}

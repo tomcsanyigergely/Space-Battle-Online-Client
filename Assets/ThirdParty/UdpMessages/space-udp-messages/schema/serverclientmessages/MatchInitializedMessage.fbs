@@ -1,0 +1,8 @@
+namespace UdpMessages.ServerClientMessages;
+
+table MatchInitializedMessage {
+  clientToken: uint64;
+  playerNumber: uint8;
+  teamOnePlayers: [string] (required);
+  teamTwoPlayers: [string] (required);
+}

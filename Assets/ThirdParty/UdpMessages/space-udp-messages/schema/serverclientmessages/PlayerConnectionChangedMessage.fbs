@@ -1,0 +1,10 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct PlayerConnectionChangedMessageFix {
+  playerNumber: uint8;
+  isConnected:  bool;
+}
+
+table PlayerConnectionChangedMessage {
+  fix: PlayerConnectionChangedMessageFix (required);
+}

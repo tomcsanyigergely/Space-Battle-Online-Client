@@ -1,0 +1,14 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct ControlPointContestingChangedMessageFix {
+  controlPointId: uint8;
+  team: uint8;
+  isContesting: bool;
+  progressedTeam: uint8;
+  progression: float;
+  timeToDraw: float;
+}
+
+table ControlPointContestingChangedMessage {
+  fix: ControlPointContestingChangedMessageFix (required);
+}

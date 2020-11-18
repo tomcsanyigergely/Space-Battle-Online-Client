@@ -1,0 +1,9 @@
+namespace UdpMessages.ClientServerMessages;
+
+struct ConnectMessageFix {
+  clientToken: uint64;
+}
+
+table ConnectMessage {
+  fix: ConnectMessageFix (required);
+}

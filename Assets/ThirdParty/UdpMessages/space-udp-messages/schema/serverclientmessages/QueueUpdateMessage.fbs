@@ -1,0 +1,5 @@
+namespace UdpMessages.ServerClientMessages;
+
+table QueueUpdateMessage {
+  playersInQueue: uint8;
+}

@@ -1,0 +1,2 @@
+include "schema/clientservermessages/ClientServerMessage.fbs";
+include "schema/serverclientmessages/ServerClientMessage.fbs";

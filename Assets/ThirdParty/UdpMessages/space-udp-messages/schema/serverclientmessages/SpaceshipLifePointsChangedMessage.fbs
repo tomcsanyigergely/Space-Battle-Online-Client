@@ -1,0 +1,10 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct SpaceshipLifePointsChangedMessageFix {
+  owner:       uint8;
+  lifePoints:  float;
+}
+
+table SpaceshipLifePointsChangedMessage {
+  fix: SpaceshipLifePointsChangedMessageFix (required);
+}

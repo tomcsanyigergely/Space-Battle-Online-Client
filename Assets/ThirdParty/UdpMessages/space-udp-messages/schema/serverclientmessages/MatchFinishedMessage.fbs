@@ -1,0 +1,7 @@
+include "../utilities/PrimitiveStructs.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+table MatchFinishedMessage {
+  winner: UdpMessages.Utilities.UInt8Struct; // optional
+}

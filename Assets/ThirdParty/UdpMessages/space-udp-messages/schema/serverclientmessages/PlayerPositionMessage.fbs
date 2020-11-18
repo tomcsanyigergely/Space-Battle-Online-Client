@@ -1,0 +1,13 @@
+include "Position.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+struct PlayerPositionData {
+  position: Position;
+  direction: float;
+}
+
+table PlayerPositionMessage {
+  data: [PlayerPositionData] (required);
+  tickCounter: uint8;
+}

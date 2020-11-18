@@ -1,0 +1,41 @@
+include "GetVersionMessage.fbs";
+
+include "EnterQueueMessage.fbs";
+include "LeaveQueueMessage.fbs";
+
+include "CreateRoomMessage.fbs";
+include "LeaveRoomMessage.fbs";
+include "EnterRoomMessage.fbs";
+include "StartRoomMessage.fbs";
+include "SelectTeamMessage.fbs";
+
+include "ConnectMessage.fbs";
+include "ClientReadyMessage.fbs";
+include "ClientInputMessage.fbs";
+include "ClientActionMessage.fbs";
+
+namespace UdpMessages.ClientServerMessages;
+
+union ClientServerMessageContent {
+  GetVersionMessage,
+
+  EnterQueueMessage,
+  LeaveQueueMessage,
+
+  CreateRoomMessage,
+  LeaveRoomMessage,
+  EnterRoomMessage,
+  StartRoomMessage,
+  SelectTeamMessage,
+
+  ConnectMessage,
+  ClientReadyMessage,
+  ClientInputMessage,
+  ClientActionMessage
+}
+
+table ClientServerMessage {
+  content: ClientServerMessageContent (required);
+}
+
+root_type ClientServerMessage;

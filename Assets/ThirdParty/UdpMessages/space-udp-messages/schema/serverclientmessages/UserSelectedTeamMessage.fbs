@@ -1,0 +1,8 @@
+include "../utilities/PrimitiveStructs.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+table UserSelectedTeamMessage {
+  userIndex: uint8;
+  selectedTeam : UdpMessages.Utilities.UInt8Struct; // optional
+}

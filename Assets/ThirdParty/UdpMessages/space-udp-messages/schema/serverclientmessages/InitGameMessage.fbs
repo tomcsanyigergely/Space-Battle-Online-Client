@@ -1,0 +1,101 @@
+include "Position.fbs";
+include "ProjectileType.fbs";
+include "../utilities/PrimitiveStructs.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+struct SpaceshipState {
+  lifePoints:       float;
+  position:         Position;
+  direction:        float;
+  healingSpeed:     float;
+}
+
+table Spaceship {
+  state: SpaceshipState; /* optional */
+  username: string (required);
+  isConnected: bool;
+}
+
+struct RespawnPoint {
+  position: Position;
+  width: float;
+  height: float;
+}
+
+table Obstacle {
+  position: Position (required);
+  collider: [Position] (required);
+}
+
+struct ProjectileState {
+  owner:      uint8;
+  position:   Position;
+  direction:  float;
+  type:       ProjectileType;
+}
+
+table Projectile {
+  state: ProjectileState; /* optional */
+}
+
+struct ControlPointStateFix {
+  position:             Position;
+  contestedByTeamOne:   bool;
+  contestedByTeamTwo:   bool;
+  progressedTeam:       uint8;
+  progression:          float;
+  timeBeforeCooldown:   float;
+}
+
+table ControlPointState {
+  fix: ControlPointStateFix (required);
+  owner: UdpMessages.Utilities.UInt8Struct; /* optional */
+}
+
+struct InitGameMessageFix {
+  playerNumber:		                        uint8;
+  teamSize:                               uint8;
+  normalProjectileAmmo:                   uint8;
+  normalProjectileReloadTimeRemaining:    float;
+  bouncingProjectileAmmo:                 uint8;
+  bouncingProjectileReloadTimeRemaining:  float;
+
+  spaceshipRespawnTime:           uint8;
+  spaceshipMaxLifePoints:         float;
+  spaceshipRadius:                float;
+  normalProjectileRadius:         float;
+  normalProjectileSpeed:          float;
+  normalProjectileClipSize:       uint8;
+  normalProjectileReloadDelay:    float;
+  normalProjectileReloadSpeed:    float;
+  bouncingProjectileRadius:       float;
+  bouncingProjectileSpeed:        float;
+  bouncingProjectileClipSize:     uint8;
+  bouncingProjectileAutoReloadSpeed: float;
+  controlPointRadius:             float;
+  controlPointCapturingLimit:     float;
+  controlPointCapturingSpeed:     float;
+  controlPointTimeBeforeCooldown: float;
+  controlPointCooldownSpeed:      float;
+  controlProgressionGoal:         float;
+  controlProgressionSpeed:        float;
+  reinstallDuration:              float;
+
+  teamOneRespawnPoint:          RespawnPoint;
+  teamTwoRespawnPoint:          RespawnPoint;
+  teamOneControlProgression:    float;
+  teamTwoControlProgression:    float;
+  teamOneReinstallRemaining:    float;
+  teamTwoReinstallRemaining:    float;
+
+  timeToDraw:                   float;
+}
+
+table InitGameMessage {
+  fix:                InitGameMessageFix  (required);
+  spaceships:         [Spaceship]         (required);
+  obstacles:          [Obstacle]          (required);
+  projectiles:        [Projectile]        (required);
+  controlPointStates: [ControlPointState] (required);
+}

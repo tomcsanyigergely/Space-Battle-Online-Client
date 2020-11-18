@@ -1,0 +1,9 @@
+namespace UdpMessages.Utilities;
+
+struct UInt8Struct {
+  value: uint8;
+}
+
+struct FloatStruct {
+  value: float;
+}

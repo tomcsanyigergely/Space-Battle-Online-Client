@@ -1,0 +1,15 @@
+include "../utilities/PrimitiveStructs.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+table RoomUserData {
+  userIndex: uint8;
+  username: string;
+  selectedTeam: UdpMessages.Utilities.UInt8Struct; // optional
+}
+
+table RoomEnteredMessage {
+  userIndex: uint8;
+  teamSize: uint8;
+  users: [RoomUserData] (required);
+}

@@ -1,0 +1,28 @@
+namespace UdpMessages.ClientServerMessages;
+
+struct ShootNormalProjectileActionFix {
+  posX: float;
+  posY: float;
+}
+
+table ShootNormalProjectileAction {
+  fix: ShootNormalProjectileActionFix (required);
+}
+
+struct ShootBouncingProjectileActionFix {
+  posX: float;
+  posY: float;
+}
+
+table ShootBouncingProjectileAction {
+  fix: ShootBouncingProjectileActionFix (required);
+}
+
+union ClientAction {
+  ShootNormalProjectileAction,
+  ShootBouncingProjectileAction
+}
+
+table ClientActionMessage {
+  content: ClientAction (required);
+}

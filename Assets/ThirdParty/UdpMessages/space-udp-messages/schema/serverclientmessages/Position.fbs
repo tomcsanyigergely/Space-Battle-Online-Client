@@ -1,0 +1,6 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct Position {
+  x: float;
+  y: float;
+}

@@ -1,0 +1,17 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct Version {
+  majorVersion: uint8;
+  minorVersion: uint8;
+  patchVersion: uint8;
+}
+
+struct VersionMessageFix {
+  minVersion: Version;
+  maxVersion: Version;
+  newMatchesAllowed: bool;
+}
+
+table VersionMessage {
+  fix: VersionMessageFix (required);
+}

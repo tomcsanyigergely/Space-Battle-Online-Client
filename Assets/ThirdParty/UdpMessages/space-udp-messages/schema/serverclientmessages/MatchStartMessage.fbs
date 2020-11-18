@@ -1,0 +1,9 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct MatchStartMessageFix {
+  secondsToWait: uint8;
+}
+
+table MatchStartMessage {
+  fix: MatchStartMessageFix (required);
+}

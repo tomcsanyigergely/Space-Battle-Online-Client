@@ -1,0 +1,13 @@
+include "Position.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+struct ProjectileDirectionChangedMessageFix {
+  projectileId: uint8;
+  position: Position;
+  direction: float;
+}
+
+table ProjectileDirectionChangedMessage {
+  fix: ProjectileDirectionChangedMessageFix (required);
+}

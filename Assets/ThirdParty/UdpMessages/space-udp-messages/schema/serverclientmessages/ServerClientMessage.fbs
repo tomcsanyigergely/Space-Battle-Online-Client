@@ -1,0 +1,77 @@
+include "VersionMessage.fbs";
+include "NoNewMatchesAllowedMessage.fbs";
+
+include "QueueUpdateMessage.fbs";
+include "QueueLeftMessage.fbs";
+include "MatchInitializedMessage.fbs";
+
+include "RoomCreatedMessage.fbs";
+include "RoomEnteredMessage.fbs";
+include "UserEnteredRoomMessage.fbs";
+include "UserLeftRoomMessage.fbs";
+include "RoomDeletedMessage.fbs";
+include "UserSelectedTeamMessage.fbs";
+
+include "InvalidRoomTokenMessage.fbs";
+include "InvalidClientTokenMessage.fbs";
+
+include "InitGameMessage.fbs";
+include "MatchStartMessage.fbs";
+include "MatchFinishedMessage.fbs";
+include "MatchCancelledMessage.fbs";
+include "PlayerConnectionChangedMessage.fbs";
+include "PlayerPositionMessage.fbs";
+include "SpaceshipRespawnedMessage.fbs";
+include "SpaceshipLifePointsChangedMessage.fbs";
+include "SpaceshipDestroyedMessage.fbs";
+include "SpaceshipHealingChangedMessage.fbs";
+include "SpaceshipHitMessage.fbs";
+include "ProjectileShotMessage.fbs";
+include "ProjectileDirectionChangedMessage.fbs";
+include "ProjectileDisappearedMessage.fbs";
+include "ControlPointTakenMessage.fbs";
+include "ControlPointContestingChangedMessage.fbs";
+
+namespace UdpMessages.ServerClientMessages;
+
+union ServerClientMessageContent {
+  VersionMessage,
+  NoNewMatchesAllowedMessage,
+
+  QueueUpdateMessage,
+  QueueLeftMessage,
+  MatchInitializedMessage,
+
+  RoomCreatedMessage,
+  RoomEnteredMessage,
+  UserEnteredRoomMessage,
+  UserLeftRoomMessage,
+  RoomDeletedMessage,
+  UserSelectedTeamMessage,
+
+  InvalidRoomTokenMessage,
+  InvalidClientTokenMessage,
+
+  InitGameMessage,
+  MatchStartMessage,
+  MatchFinishedMessage,
+  MatchCancelledMessage,
+  PlayerConnectionChangedMessage,
+  PlayerPositionMessage,
+  SpaceshipRespawnedMessage,
+  SpaceshipLifePointsChangedMessage,
+  SpaceshipDestroyedMessage,
+  SpaceshipHealingChangedMessage,
+  SpaceshipHitMessage,
+  ProjectileShotMessage,
+  ProjectileDirectionChangedMessage,
+  ProjectileDisappearedMessage,
+  ControlPointTakenMessage,
+  ControlPointContestingChangedMessage
+}
+
+table ServerClientMessage {
+  content: ServerClientMessageContent (required);
+}
+
+root_type ServerClientMessage;

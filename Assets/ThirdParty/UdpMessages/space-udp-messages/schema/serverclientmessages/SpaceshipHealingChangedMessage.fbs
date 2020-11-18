@@ -1,0 +1,11 @@
+namespace UdpMessages.ServerClientMessages;
+
+struct SpaceshipHealingChangedMessageFix {
+  owner:         uint8;
+  healingSpeed:  float;
+  lifePoints:    float;
+}
+
+table SpaceshipHealingChangedMessage {
+  fix: SpaceshipHealingChangedMessageFix (required);
+}

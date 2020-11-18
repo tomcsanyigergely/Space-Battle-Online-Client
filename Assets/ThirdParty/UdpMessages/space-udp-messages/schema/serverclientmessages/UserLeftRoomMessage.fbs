@@ -1,0 +1,5 @@
+namespace UdpMessages.ServerClientMessages;
+
+table UserLeftRoomMessage {
+  userIndex: uint8;
+}

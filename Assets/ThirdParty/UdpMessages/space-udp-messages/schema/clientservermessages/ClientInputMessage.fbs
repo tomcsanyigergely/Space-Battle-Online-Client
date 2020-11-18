@@ -1,0 +1,11 @@
+namespace UdpMessages.ClientServerMessages;
+
+struct ClientInputMessageFix {
+  inputX: float;
+  inputY: float;
+  direction: float;
+}
+
+table ClientInputMessage {
+  fix: ClientInputMessageFix (required);
+}
